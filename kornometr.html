@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="./src/css/app.css" />
+  </head>
+  <body class="w-full h-screen flex flex-col items-center justify-center">
+    <div class="bg-blue-100 w-80 h-56 rounded-md pl-8 pt-3">
+      <div
+        id="timer"
+        class="bg-white w-64 h-20 rounded-md text-center pt-6 font-semibold text-2xl"
+      >
+        00 : 00 : 000
+      </div>
+
+      <button
+        id="btn-stop"
+        class="active:shadow-inner active:shadow-blue-900 select-none transition-all duration-700 hover:bg-blue-600 hover:shadow shadow-md shadow-blue-600 bg-blue-800 text-white h-8 mt-16 w-20 rounded-sm -ml-2"
+      >
+        Pause
+      </button>
+
+      <button
+        id="btn-start"
+        class="active:shadow-inner active:shadow-red-900 select-none transition-all duration-700 hover:bg-red-400 hover:shadow shadow-md shadow-red-400 bg-red-600 text-white w-20 rounded-sm ml-5 h-8"
+      >
+        Start
+      </button>
+
+      <button
+        id="btn-reset"
+        class="active:shadow-inner active:shadow-green-900 select-none transition-all duration-700 hover:bg-green-400 hover:shadow shadow-md shadow-green-400 bg-green-600 text-white w-20 h-8 rounded-sm ml-4"
+      >
+        Reset
+      </button>
+    </div>
+    <script src="./src/js/kornometr.js"></script>
+  </body>
+</html>
