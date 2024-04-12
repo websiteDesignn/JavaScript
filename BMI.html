@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>BMI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="src/css/app.css" />
     <link
       rel="stylesheet"
@@ -74,12 +75,61 @@
       <span id="result-holder">:نتیجه</span>
     </p>
 
-    <a href="/index.html">
+    <a href="https://websitedesignn.github.io/JavaScript/index.html">
       <button class="mt-4 bg-stone-400 p-2 rounded-md hover:bg-stone-300">
         بازگشت به خانه
       </button>
     </a>
 
     <script type="module" src="src/js/BMI.js"></script>
+    <script>
+      import Swal from "sweetalert2";
+
+      import { Result } from "postcss";
+
+      const INPUT_WEIGHT = document.getElementById("input-weight");
+      const INPUT_HEIGHT = document.getElementById("input-height");
+      const BTN_CALCULATE = document.getElementById("btn-calculate");
+      const RESULT_HOLDER = document.getElementById("result-holder");
+      const BTN_RESET = document.getElementById("btn-reset");
+
+      BTN_CALCULATE.addEventListener("click", calculateBmi);
+      BTN_RESET.addEventListener("click", reset);
+
+      function reset() {
+        RESULT_HOLDER.innerText = "بازنشانی شد";
+        Swal.fire({
+          toast: true,
+          position: "top-end",
+          text: "بازنشانی شد",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 2000,
+          timerProgressBar: true,
+        });
+      }
+
+      function calculateBmi() {
+        const WEIGHT = parseInt(INPUT_WEIGHT.value);
+        const HEIGHT = parseInt(INPUT_HEIGHT.value);
+        Swal.fire({
+          timer: 2000,
+          timerProgressBar: true,
+          position: "top-end",
+          toast: "true",
+          icon: "success",
+          title: "محاسبه شد",
+          showConfirmButton: false,
+        });
+
+        if (WEIGHT === 0) RESULT_HOLDER.innerText = "چه لاغر";
+        if (HEIGHT <= 29) RESULT_HOLDER.innerText = "چه فنچ";
+
+        if (WEIGHT >= 1 && HEIGHT >= 30) {
+          const BMI = Math.round(WEIGHT / ((HEIGHT / 100) * (HEIGHT / 100)));
+          RESULT_HOLDER.innerText = `${BMI}:نتیجه`;
+        }
+      }
+    </script>
   </body>
 </html>

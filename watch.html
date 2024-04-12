@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>ساعت</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./src/css/app.css" />
   </head>
   <body
@@ -40,12 +41,25 @@
       >
     </div>
 
-    <a href="/index.html">
+    <a href="https://websitedesignn.github.io/JavaScript/index.html">
       <button class="bg-stone-400 p-2 rounded-md hover:bg-stone-300">
         بازگشت به خانه
       </button>
     </a>
 
     <script src="./src/js/watch.js"></script>
+    <script>
+      const HOURSE = document.getElementById("hourse");
+      const MINUTES = document.getElementById("minutes");
+      const SECONDS = document.getElementById("seconds");
+
+      function refresh() {
+        let currentTime = new Date();
+        HOURSE.innerText = `${currentTime.getHours()}`;
+        MINUTES.innerText = `${currentTime.getMinutes()}`;
+        SECONDS.innerText = `${currentTime.getSeconds()}`;
+      }
+      setInterval(refresh, 500);
+    </script>
   </body>
 </html>

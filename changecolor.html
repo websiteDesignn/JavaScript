@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>تغییر رنگ پس زمینه</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="src/css/app.css" />
   </head>
   <body
@@ -28,12 +29,25 @@
       </button>
     </div>
 
-    <a href="/index.html">
+    <a href="https://websitedesignn.github.io/JavaScript/index.html">
       <button class="mt-4 bg-stone-400 p-2 rounded-md hover:bg-stone-300">
         بازگشت به خانه
       </button>
     </a>
 
     <script src="/src/js/changecolor.js"></script>
+    <script>
+      "use strict";
+
+      const COLORSELECT = document.getElementById("colorSelect");
+      const BODY = document.getElementById("body");
+      const BTN = document.getElementById("btn");
+
+      function h() {
+        BODY.style.backgroundColor = COLORSELECT.value;
+      }
+
+      BTN.addEventListener("click", h);
+    </script>
   </body>
 </html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>ماشین حساب</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="src/css/app.css" />
     <style>
       .class {
@@ -41,12 +42,40 @@
       </div>
     </section>
 
-    <a href="/index.html">
+    <a href="https://websitedesignn.github.io/JavaScript/index.html">
       <button class="mt-4 bg-stone-400 p-2 rounded-md hover:bg-stone-300">
         بازگشت به خانه
       </button>
     </a>
 
     <script src="./src/js/calculator.js"></script>
+    <script>
+      (function () {
+        let screen = document.querySelector(".screen");
+        let buttons = document.querySelectorAll(".btn");
+        let clear = document.querySelector(".btn-clear");
+        let equal = document.querySelector(".btn-equal");
+
+        buttons.forEach(function (button) {
+          button.addEventListener("click", function (e) {
+            let value = e.target.dataset.num;
+            screen.value += value;
+          });
+        });
+
+        equal.addEventListener("click", function (e) {
+          if (screen.value === "") {
+            screen.value = "Please Enter a Value";
+          } else {
+            let answer = eval(screen.value);
+            screen.value = answer;
+          }
+        });
+
+        clear.addEventListener("click", function (e) {
+          screen.value = "";
+        });
+      })();
+    </script>
   </body>
 </html>
