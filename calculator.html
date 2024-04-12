@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ماشین حساب</title>
+    <link rel="stylesheet" href="src/css/app.css" />
+    <style>
+      .class {
+        @apply border border-black bg-gray-200/70 text-3xl w-24 h-10 rounded-lg;
+      }
+    </style>
+  </head>
+  <body class="w-full h-screen flex items-center justify-center">
+    <section class="bg-gray-500 w-[400px] h-80 rounded-md">
+      <form>
+        <input
+          type="text"
+          class="screen bg-gray-400 w-80 rounded-md h-14 ml-8 mt-2"
+        />
+      </form>
+      <div class="grid grid-cols-4 gap-y-0.5 gap-x-0.5 mt-4">
+        <button class="btn-clear class">C</button>
+        <button class="btn class" data-num="*">x</button>
+        <button class="btn class" data-num="/">/</button>
+        <button class="btn class" data-num=".">.</button>
+        <button class="btn class" data-num="7">7</button>
+        <button class="btn class" data-num="8">8</button>
+        <button class="btn class" data-num="9">9</button>
+        <button class="btn class" data-num="-">-</button>
+        <button class="btn class" data-num="4">4</button>
+        <button class="btn class" data-num="5">5</button>
+        <button class="btn class" data-num="6">6</button>
+        <button class="btn class" data-num="+">+</button>
+        <button class="btn class" data-num="1">1</button>
+        <button class="btn class" data-num="2">2</button>
+        <button class="btn class" data-num="3">3</button>
+        <button class="btn-equal class">=</button>
+        <button class="btn class" data-num="0">0</button>
+      </div>
+    </section>
+    <script src="./src/js/calculator.js"></script>
+  </body>
+</html>
